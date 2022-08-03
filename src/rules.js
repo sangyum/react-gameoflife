@@ -14,7 +14,16 @@ These rules, which compare the behavior of the automaton to real life, can be co
 
 */
 
-const willILive = (currentState, numberOfLiveNeighbors) => {};
+const willILive = (currentState, numberOfLiveNeighbors) => {
+  if (numberOfLiveNeighbors === 3) {
+    return true;
+  }
+
+  if (currentState && numberOfLiveNeighbors === 2) {
+    return true;
+  }
+  return false;
+};
 
 module.exports = {
   willILive,
